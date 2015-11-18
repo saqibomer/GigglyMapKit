@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		AAF2FC1D1BFC760F00516DBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2FC1C1BFC760F00516DBC /* AppDelegate.swift */; };
-		AAF2FC1F1BFC760F00516DBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2FC1E1BFC760F00516DBC /* ViewController.swift */; };
+		AAF2FC1F1BFC760F00516DBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2FC1E1BFC760F00516DBC /* MapViewController.swift */; };
 		AAF2FC221BFC760F00516DBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2FC201BFC760F00516DBC /* Main.storyboard */; };
 		AAF2FC241BFC760F00516DBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF2FC231BFC760F00516DBC /* Assets.xcassets */; };
 		AAF2FC271BFC760F00516DBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF2FC251BFC760F00516DBC /* LaunchScreen.storyboard */; };
+		AAF2FC341BFC9B3000516DBC /* GigglyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2FC331BFC9B3000516DBC /* GigglyMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AAF2FC191BFC760E00516DBC /* GigglyMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigglyMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF2FC1C1BFC760F00516DBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAF2FC1E1BFC760F00516DBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAF2FC1E1BFC760F00516DBC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AAF2FC211BFC760F00516DBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAF2FC231BFC760F00516DBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAF2FC261BFC760F00516DBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAF2FC281BFC760F00516DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAF2FC331BFC9B3000516DBC /* GigglyMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GigglyMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,31 @@
 		AAF2FC1B1BFC760F00516DBC /* GigglyMap */ = {
 			isa = PBXGroup;
 			children = (
+				AAF2FC321BFC9B1300516DBC /* Source */,
+				AAF2FC2E1BFC761500516DBC /* ViewControllers */,
 				AAF2FC1C1BFC760F00516DBC /* AppDelegate.swift */,
-				AAF2FC1E1BFC760F00516DBC /* ViewController.swift */,
 				AAF2FC201BFC760F00516DBC /* Main.storyboard */,
 				AAF2FC231BFC760F00516DBC /* Assets.xcassets */,
 				AAF2FC251BFC760F00516DBC /* LaunchScreen.storyboard */,
 				AAF2FC281BFC760F00516DBC /* Info.plist */,
 			);
 			path = GigglyMap;
+			sourceTree = "<group>";
+		};
+		AAF2FC2E1BFC761500516DBC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAF2FC1E1BFC760F00516DBC /* MapViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AAF2FC321BFC9B1300516DBC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AAF2FC331BFC9B3000516DBC /* GigglyMap.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF2FC1F1BFC760F00516DBC /* ViewController.swift in Sources */,
+				AAF2FC341BFC9B3000516DBC /* GigglyMap.swift in Sources */,
+				AAF2FC1F1BFC760F00516DBC /* MapViewController.swift in Sources */,
 				AAF2FC1D1BFC760F00516DBC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
