@@ -18,6 +18,12 @@ class GigglyMap: NSObject, CLLocationManagerDelegate {
     internal var locPermission : Bool!
     private let locationManager = CLLocationManager()
     
+    var localSearchRequest:MKLocalSearchRequest!
+    var localSearch:MKLocalSearch!
+    var localSearchResponse:MKLocalSearchResponse!
+    var pointAnnotation:MKPointAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
+    
     
     // Methods
     
@@ -58,6 +64,36 @@ class GigglyMap: NSObject, CLLocationManagerDelegate {
             annotation.coordinate = loc.coordinate
             mapView.setRegion(coordinateRegion, animated: true)
             mapView.addAnnotation(annotation)
+        }
+    }
+    
+    func searchLocationByName (searchString : String, mapView : MKMapView) {
+        print(searchString)
+        
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchString
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        
+        localSearch.startWithCompletionHandler { (localSearchResponse, error: NSError?) -> Void in
+            
+            if localSearchResponse == nil {
+                print("No Such Location Found")
+                return
+            }
+            let regionRadius: CLLocationDistance = 1000
+            let coords = CLLocationCoordinate2D(latitude: (localSearchResponse?.boundingRegion.center.latitude)!, longitude: (localSearchResponse?.boundingRegion.center.longitude)!)
+            let coordRegion = MKCoordinateRegionMakeWithDistance(coords, regionRadius * 2.0, regionRadius * 2.0)
+
+            self.pointAnnotation = MKPointAnnotation()
+            self.pointAnnotation.title = searchString
+            self.pointAnnotation.coordinate = coords
+            
+            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+            
+            mapView.removeAnnotations(mapView.annotations) // Remove Prvious annotations
+            mapView.setRegion(coordRegion, animated: true)
+            mapView.addAnnotation(self.pinAnnotationView.annotation!)
+            
         }
     }
     
